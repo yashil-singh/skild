@@ -1,20 +1,16 @@
+import { ClerkProvider } from "@clerk/tanstack-react-start";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import type { QueryClient } from "@tanstack/react-query";
 import {
+  createRootRouteWithContext,
   HeadContent,
   Scripts,
-  createRootRouteWithContext,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { TanStackDevtools } from "@tanstack/react-devtools";
-
-import ClerkProvider from "../integrations/clerk/provider";
-
-import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
-
-import appCss from "../styles.css?url";
-
-import type { QueryClient } from "@tanstack/react-query";
-import Navbar from "#/components/navbar";
 import Crosshair from "#/components/crosshair";
+import Navbar from "#/components/navbar";
+import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
+import appCss from "../styles.css?url";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -67,7 +63,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             </header>
 
             <main>
-              <div className="frame">{children}</div>
+              <div className="frame min-content-height">{children}</div>
             </main>
           </div>
 
