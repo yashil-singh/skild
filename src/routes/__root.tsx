@@ -55,7 +55,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="font-sans antialiased wrap-anywhere">
+      <body className="font-sans antialiased wrap-anywhere dark">
         <ClerkProvider>
           <div id="root-layout">
             <header>

@@ -181,6 +181,10 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-muted-foreground;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {
@@ -552,7 +556,11 @@
     }
 
     .copy {
-      @apply p-1 text-text-muted opacity-0 transition-opacity hover:text-white;
+      @apply p-1 text-text-muted transition-opacity hover:text-white disabled:cursor-default;
+    }
+
+    .copy.copied {
+      @apply text-accent-primary;
     }
 
     &:hover .copy {
