@@ -150,6 +150,8 @@
   --color-hover-state: var(--accent);
 
   --radius-card: 0px;
+
+  --navbar-height: 64px;
 }
 
 @layer base {
@@ -384,8 +386,12 @@
     @apply mx-auto flex justify-center;
   }
 
+  .min-content-height {
+    @apply min-h-[calc(100dvh-var(--navbar-height))];
+  }
+
   .navbar {
-    @apply relative z-50 flex h-16 items-center justify-between border-b border-border-subtle bg-base/80 px-4 backdrop-blur-sm md:px-8;
+    @apply relative z-50 flex h-(--navbar-height) items-center justify-between border-b border-border-subtle bg-base/80 px-4 backdrop-blur-sm md:px-8;
 
     .brand {
       @apply flex cursor-pointer items-center gap-2 md:gap-3;

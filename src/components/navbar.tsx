@@ -1,3 +1,4 @@
+import { Show, UserButton } from "@clerk/tanstack-react-start";
 import { Link } from "@tanstack/react-router";
 import { LogIn } from "lucide-react";
 import type { FC } from "react";
@@ -16,10 +17,16 @@ const Navbar: FC = () => {
       </div>
 
       <div className="actions">
-        <Link to="/sign-in/$" className="btn-primary">
-          <LogIn />
-          Sign in
-        </Link>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
+
+        <Show when="signed-out">
+          <Link to="/sign-in/$" className="btn-primary">
+            <LogIn />
+            Sign in
+          </Link>
+        </Show>
       </div>
     </nav>
   );
